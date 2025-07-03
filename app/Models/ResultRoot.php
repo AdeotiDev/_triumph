@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\ResultUpload;
 use App\Models\GradingSystem;
 use Illuminate\Database\Eloquent\Model;
 
@@ -28,6 +29,10 @@ class ResultRoot extends Model
 
 
 
+    public function resultUploads()
+    {
+        return $this->hasMany(ResultUpload::class, 'result_root_id');
+    }
 
     public function gradingSystem()
     {
